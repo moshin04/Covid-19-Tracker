@@ -4,6 +4,7 @@ import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
 import coronaImage from './images/image.png';
+import { Typography } from '@material-ui/core';
 
 class App extends React.Component {
     state = {
@@ -31,6 +32,7 @@ class App extends React.Component {
         <div className={styles.container}>
             <img className={styles.container} src={coronaImage} alt="coronaimage" />
             <Cards data={data}/>
+            <Typography variant="body2">Select your country 🔻</Typography>
             <CountryPicker handleCountryChange={this.handleCountryChange} />
             <Chart data={data} country={country} />
         </div>
